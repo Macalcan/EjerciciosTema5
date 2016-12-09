@@ -20,7 +20,7 @@ var PlayScene = {
       //TODO 5 Creamos a rush 'rush'  con el sprite por defecto en el 10, 10 con la animación por defecto 'rush_idle01'
       this._rush = game.add.sprite(10, 10, 'rush');
       this._rush.animations.play('rush_idle01', 0, true);   
-        
+
      //TODO 4: Cargar el tilemap 'tilemap' y asignarle al tileset 'patrones' la imagen de sprites 'tiles'
       this.map = this.game.add.tilemap('tilemap');
       this.map.addTilesetImage("patrones","tiles");
@@ -135,6 +135,7 @@ var PlayScene = {
     
     onPlayerFell: function(){
         //TODO 6 Carga de 'gameOver';
+        this.game.state.start('gameOver');
     },
     
     checkPlayerFell: function(){
