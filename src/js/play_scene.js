@@ -187,8 +187,12 @@ var PlayScene = {
 
     },
     
-    //TODO 9 destruir los recursos tilemap, tiles y logo.
+    //TODO 9 destruir los recursos tilemap, tiles.
+    function destroyResources (tilemap, tiles) {
 
+    tilemap.destroy();
+    tiles.destroy();
+    }
 };
 
 module.exports = PlayScene;
