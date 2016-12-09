@@ -27,7 +27,7 @@ var GameOver = {
     },
     actionOnClickM : function(){
         this.game.state.start('menu');
-    },
+    }
 };
 
 module.exports = GameOver;
@@ -78,7 +78,7 @@ var PreloaderScene = {
       this.game.load.atlas('rush', 'images/rush_spritesheet.png','images/rush_spritesheet.json', Phaser.Loader.TEXTURE_ATLAS_JSON_HASH);
 
       //TODO 2.2a Escuchar el evento onLoadComplete con el método loadComplete que el state 'play'
-      this.game.onLoadComplete(this.loadComplete, this);
+      this.load.onLoadComplete.add(this.loadComplete, this);
   },
 
   loadStart: function () {
@@ -177,7 +177,7 @@ var PlayScene = {
   create: function () {
       //Creamos al player con un sprite por defecto.
       //TODO 5 Creamos a rush 'rush'  con el sprite por defecto en el 10, 10 con la animación por defecto 'rush_idle01'
-      this._rush = game.add.sprite(10, 10, 'rush'); 
+      this._rush = this.game.add.sprite(10, 10, 'rush'); 
 
      //TODO 4: Cargar el tilemap 'tilemap' y asignarle al tileset 'patrones' la imagen de sprites 'tiles'
       this.map = this.game.add.tilemap('tilemap');

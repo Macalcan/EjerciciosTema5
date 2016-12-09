@@ -26,7 +26,7 @@ var GameOver = {
     },
     actionOnClickM : function(){
         this.game.state.start('menu');
-    },
+    }
 };
 
 module.exports = GameOver;
