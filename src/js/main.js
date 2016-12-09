@@ -4,7 +4,7 @@
 var play_scene = require('./play_scene');
 var gameover_scene = require('./gameover_scene');
 var menu_scene = require('./menu_scene');
-//  The Google WebFont Loader will look for this object, so create it before loading the script.
+// The Google WebFont Loader will look for this object, so create it before loading the script.
 
 
 
@@ -54,7 +54,9 @@ var PreloaderScene = {
     
     
      //TODO 2.2b function loadComplete()
-
+     loadComplete: function(){
+     	this.game.state.start("play");
+     },
     
     update: function(){
         this._loadingBar
@@ -77,8 +79,10 @@ var wfconfig = {
  
 //TODO 3.2 Cargar Google font cuando la página esté cargada con wfconfig.
 //TODO 3.3 La creación del juego y la asignación de los states se hará en el método init().
-
-window.onload = function () {
+window.onload = function (){
+	WebFont.load(wfconfig);
+};
+  function init () {
   var game = new Phaser.Game(800, 600, Phaser.AUTO, 'game');
 
 //TODO 1.2 Añadir los states 'boot' BootScene, 'menu' MenuScene, 'preloader' PreloaderScene, 'play' PlayScene, 'gameOver' GameOver.
