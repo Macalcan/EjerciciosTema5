@@ -1,7 +1,9 @@
 'use strict';
 
 //TODO 1.1 Require de las escenas, play_scene, gameover_scene y menu_scene.
-
+var play_scene = require('./play_scene');
+var gameover_scene = require('./gameover_scene');
+var menu_scene = require('./menu_scene');
 //  The Google WebFont Loader will look for this object, so create it before loading the script.
 
 
