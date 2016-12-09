@@ -65,7 +65,7 @@ var PreloaderScene = {
       this.game.load.tilemap('tilemap', 'images/map.json', null, Phaser.Tilemap.TILED_JSON);
       this.game.load.image('tiles','images/simples_pimples.png');
       //revisar que no es atlasJSONHash
-      this.game.load.atlas('images/rush_spritesheet.png', 'images/rush_spritesheet.json'); 
+      this.game.load.atlas('rush', 'images/rush_spritesheet.png','images/rush_spritesheet.json', phaser.Loader.Texture_Atlas_Json_Has);
 
       //TODO 2.2a Escuchar el evento onLoadComplete con el método loadComplete que el state 'play'
       this.game.onLoadComplete(this.loadComplete, this);
@@ -166,8 +166,10 @@ var PlayScene = {
   create: function () {
       //Creamos al player con un sprite por defecto.
       //TODO 5 Creamos a rush 'rush'  con el sprite por defecto en el 10, 10 con la animación por defecto 'rush_idle01'
-      
-      //TODO 4: Cargar el tilemap 'tilemap' y asignarle al tileset 'patrones' la imagen de sprites 'tiles'
+      this._rush = game.add.sprite(10, 10, 'rush');
+      this._rush.animations.play('rush_idle01', 0, true);   
+        
+     //TODO 4: Cargar el tilemap 'tilemap' y asignarle al tileset 'patrones' la imagen de sprites 'tiles'
       this.map = this.game.add.tilemap('tilemap');
       this.map.addTilesetImage("patrones","tiles");
       //Creacion de las layers
