@@ -13,11 +13,19 @@ var GameOver = {
         button.addChild(text);
         
         //TODO 8 crear un boton con el texto 'Return Main Menu' que nos devuelva al menu del juego.
+        var buttonMenu = this.game.add.button(200, 300, 'buttonMenu', this.actionOnClickM, this, 2, 1, 0);
+        buttonMenu.anchor(1);
+        var textMenu = this.game.add.text(0, 0, "Menu");
+        text.anchor = (1);
+        buttonMenu.addChild(textMenu);
     }
     
     //TODO 7 declarar el callback del boton.
     actionOnClick: function(){
         this.game.state.start('play');
+    }
+    actionOnClickM = function(){
+        this.game.state.start('menu');
     }
 };
 
