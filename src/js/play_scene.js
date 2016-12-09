@@ -188,10 +188,10 @@ var PlayScene = {
     },
     
     //TODO 9 destruir los recursos tilemap, tiles.
-    function destroyResources (tilemap, tiles) {
+    destroy: function (tilemap, tiles) {
 
-    tilemap.destroy();
-    tiles.destroy();
+        tilemap.destroy();
+        tiles.destroy();
     }
 };
 
