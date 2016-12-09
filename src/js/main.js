@@ -84,6 +84,5 @@ window.onload = function () {
 	game.state.add("play", PlayScene);
 	game.state.add("gameOver", GameOver);
 //TODO 1.3 iniciar el state 'boot'. 
-	
-    
+	game.state.start("boot");
 };
